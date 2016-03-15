@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,17 +18,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zWQ-Xz-SGl">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJx-Cl-1nK">
+                                <rect key="frame" x="20" y="68" width="560" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CK4-mt-Tm4">
+                                <rect key="frame" x="20" y="141" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWJ-co-PtZ">
+                                <rect key="frame" x="20" y="176" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjm-VJ-Tfp">
+                                <rect key="frame" x="20" y="225" width="560" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Set City"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="i2D-HT-81W"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8W0-Rq-6g8"/>
+                                    <action selector="setCityTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFD-Ec-rKz"/>
                                 </connections>
-                            </tableView>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Clouds:00%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkd-wA-Mlu">
+                                <rect key="frame" x="0.0" y="294" width="600" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CK4-mt-Tm4" firstAttribute="top" secondItem="BJx-Cl-1nK" secondAttribute="bottom" constant="17" id="06p-FE-O6U"/>
+                            <constraint firstItem="CK4-mt-Tm4" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2fR-Qv-0yU"/>
+                            <constraint firstItem="BJx-Cl-1nK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GRf-JQ-K2j"/>
+                            <constraint firstItem="Hjm-VJ-Tfp" firstAttribute="top" secondItem="AWJ-co-PtZ" secondAttribute="bottom" constant="28" id="RkO-RD-y4W"/>
+                            <constraint firstItem="BJx-Cl-1nK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="UgD-4F-jbZ"/>
+                            <constraint firstItem="AWJ-co-PtZ" firstAttribute="top" secondItem="CK4-mt-Tm4" secondAttribute="bottom" constant="14" id="Wn2-Jx-GVe"/>
+                            <constraint firstItem="Hkd-wA-Mlu" firstAttribute="top" secondItem="Hjm-VJ-Tfp" secondAttribute="bottom" constant="8" id="YLt-fP-iYU"/>
+                            <constraint firstItem="BJx-Cl-1nK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZNg-4o-Jwq"/>
+                            <constraint firstItem="BJx-Cl-1nK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="kIa-d2-3pL"/>
+                            <constraint firstItem="AWJ-co-PtZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ogW-l7-Cex"/>
+                            <constraint firstItem="BJx-Cl-1nK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rCO-RJ-lQr"/>
+                            <constraint firstItem="AWJ-co-PtZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rka-JJ-GCq"/>
+                            <constraint firstItem="Hjm-VJ-Tfp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xkr-TP-T9L"/>
+                            <constraint firstItem="CK4-mt-Tm4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xqR-UH-dFD"/>
+                            <constraint firstItem="Hjm-VJ-Tfp" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zPD-Y8-Ijr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="CityLabel" destination="AWJ-co-PtZ" id="oE9-W6-lxy"/>
+                        <outlet property="cityButton" destination="Hjm-VJ-Tfp" id="LqX-bn-9nn"/>
+                        <outlet property="cityLabel" destination="AWJ-co-PtZ" id="fBe-72-pxv"/>
+                        <outlet property="cloudsLabel" destination="Hkd-wA-Mlu" id="cIP-yp-bAc"/>
+                        <outlet property="descriptionLabel" destination="CK4-mt-Tm4" id="TQQ-c2-hal"/>
+                        <outlet property="tempLabel" destination="BJx-Cl-1nK" id="NCF-pl-y78"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
